@@ -114,3 +114,64 @@ Hello
 Hello
 Hello
 End of the main thread '''
+#ex-7
+'''
+def fun():
+    for i in range(5):
+        print('Hi')
+        time.sleep(1)
+    t2=Thread(target=fun1)
+    print('t2 is daemon:',t2.daemon)
+    t2.start()
+def fun1():
+    for i in range(5):
+        print('Hello')
+        time.sleep(1)
+
+t1=Thread(target=fun,daemon=True)
+print('t1 is daemon:',t1.daemon)
+t1.start()
+time.sleep(10)
+print('End of the main thread')
+
+t1 is daemon: True
+Hi
+Hi
+Hi
+Hi
+Hi
+t2 is daemon: True
+Hello
+Hello
+Hello
+Hello
+Hello
+End of the main thread '''
+
+#ex-8
+'''
+def fun():
+    for i in range(5):
+        print('Hi')
+        time.sleep(1)
+    t2=Thread(target=fun1)
+    print('t2 is daemon:',t2.daemon)
+    t2.start()
+def fun1():
+    for i in range(5):
+        print('Hello')
+        time.sleep(1)
+
+t1=Thread(target=fun,daemon=True)
+print('t1 is daemon:',t1.daemon)
+t1.start()
+time.sleep(5)
+print('End of the main thread')
+
+t1 is daemon: True
+Hi
+Hi
+Hi
+Hi
+Hi
+End of the main thread '''
