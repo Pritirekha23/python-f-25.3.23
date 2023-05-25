@@ -229,3 +229,28 @@ I am waiting since 12 second
 I am waiting since 16 second
 priti
 '''
+
+#ex-11
+# traditinal approach
+#isDaemon()->used to check a thread is daemon or not.
+'''print('main thread i daemon :',current_thread().isDaemon())
+
+output:
+DeprecationWarning: isDaemon() is deprecated, get the daemon attribute instead        
+  print('main thread i daemon :',current_thread().isDaemon())
+main thread i daemon : False '''
+
+#setDaemon
+'''def fun1():
+    for i in range(3):
+        print('jin')
+        time.sleep(2)
+t1=Thread(target=fun1)
+t1.setDaemon(True)
+t1.start()
+
+output:
+_daemon thread.py:249: DeprecationWarning: setDaemon() is deprecated, set 
+the daemon attribute instead       
+  t1.setDaemon(True)
+jin'''
