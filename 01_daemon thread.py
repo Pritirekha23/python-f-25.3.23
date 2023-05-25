@@ -254,3 +254,30 @@ _daemon thread.py:249: DeprecationWarning: setDaemon() is deprecated, set
 the daemon attribute instead       
   t1.setDaemon(True)
 jin'''
+
+#NOTE:
+'''Once a thread started then we cant change its nature '''
+
+'''def fun1():
+    for i in range(2):
+        print('jimin')
+        time.sleep(2)
+t1=Thread(target=fun1)
+t1.start()
+t1.daemon=True 
+#t1 thread already started but here we are trying to set t1 as daemon so it cant be daemon.
+
+output:
+daemon status of active thread")   
+RuntimeError: cannot set daemon status of active thread
+jimin
+'''
+
+#main thread is non daemon by default can we change its nature (ans: no we cant change)
+
+current_thread().daemon=True
+
+# output:
+#  RuntimeError("cannot set 
+# daemon status of active thread")   
+# RuntimeError: cannot set daemon status of active thread
